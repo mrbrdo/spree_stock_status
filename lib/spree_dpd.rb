@@ -1,0 +1,5 @@
+require 'spree_core'
+require 'spree_extension'
+require 'spree_dpd/version'
+require 'spree_dpd/engine'
+require 'sass/rails'
