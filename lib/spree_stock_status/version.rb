@@ -1,3 +1,3 @@
-module SpreeDpd
+module SpreeStockStatus
   VERSION = '1.0.0'
 end

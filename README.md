@@ -1,10 +1,10 @@
-# Spree DPD
+# Spree Stock Status
 
 ## Installation
 
 1. Add this extension to your Gemfile with this line:
         
-        gem 'spree_dpd', github: 'mrbrdo/spree_dpd'
+        gem 'spree_stock_status', github: 'mrbrdo/spree_stock_status'
 
 2. Install the gem using Bundler:
 

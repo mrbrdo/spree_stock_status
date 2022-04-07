@@ -1,0 +1,26 @@
+  <div id="update_stock_status_form" class="card mb-3">
+    <div class="card-header">
+      <h1 class="card-title mb-0 h5">
+        <%= Spree.t(:out_of_stock_status) %>
+      </h1>
+    </div>
+    <div class="card-body">
+      <%= form_for [:admin, @product], url: admin_product_path(@product) do |f| %>
+        <div data-hook="admin_stock_movements_form_fields" class="row">
+          <div class="col-12 col-lg-5">
+            <div class="form-group">
+              <%= f.field_container :stock_status do %>
+                <%= select_tag 'stock_status_id', options_from_collection_for_select(@stock_locations, :id, :name),
+                  class: 'select2' %>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="form-actions text-center" data-hook="buttons">
+              <%= button Spree.t('actions.update'), 'save.svg' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
