@@ -23,9 +23,8 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'spree_core', '>= 3.1.0', '< 5.0'
-  s.add_dependency 'spree_auth_devise', '>= 3.1.0', '< 5.0'
   s.add_dependency 'spree_extension'
-  s.add_dependency 'faraday'
+  s.add_dependency 'mobility'
 
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'capybara-screenshot'

@@ -10,8 +10,9 @@
           <div class="col-12 col-lg-5">
             <div class="form-group">
               <%= f.field_container :stock_status do %>
-                <%= select_tag 'stock_status_id', options_from_collection_for_select(@stock_locations, :id, :name),
-                  class: 'select2' %>
+                <%= select_tag 'product[stock_status_id]',
+                options_from_collection_for_select(Spree::StockStatus.all, :id, :name, @product.stock_status_id),
+                  include_blank: Spree.t(:default), class: 'select2' %>
               <% end %>
             </div>
           </div>

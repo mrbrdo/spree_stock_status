@@ -10,6 +10,11 @@
 
         bundle install
 
-3. Restart your server
+3. Copy & run migrations
+  ```ruby
+  bundle exec rails g spree_stock_status:install
+  ```
+  
+4. Restart your server
 
         If your server was running, restart it so that it can find the assets properly.
