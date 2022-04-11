@@ -1,3 +1,11 @@
 sl-SI:
   spree:
-    out_of_stock_status: Status ob prazni zalogi
+    out_of_stock_status: Status dobave ko izdelek ni na zalogi
+    stock_status: Status dobave
+    new_stock_status: Nov status dobave
+    stock_statuses: Statusi dobave
+  
+  activerecord:
+    models:
+      spree/stock_status: Status dobave
+    

@@ -1,3 +1,7 @@
 en:
   spree:
     out_of_stock_status: Out of Stock Status
+    stock_status: Stock Status
+    new_stock_status: New Stock Status
+    stock_statuses: Stock Statuses
+    

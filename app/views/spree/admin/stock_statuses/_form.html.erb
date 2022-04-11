@@ -1,0 +1,28 @@
+<div data-hook="admin_stock_status_form_fields">
+
+  <div data-hook="stock_status" class="row">
+
+    <div class="col-12 col-md-6">
+      <div class="card mb-3">
+        <div class="card-header">
+          <h5 class="mb-0"><%= Spree.t(:settings) %></h5>
+        </div>
+        <div class="card-body">
+          <% current_store.supported_locales_list.each do |locale| %>
+          <div>
+            <%= Spree.t('i18n.this_file_language', locale: locale) %>
+
+            <%= field_container :stock_status, :name, class: ['form-group'], 'data-hook' => 'name' do %>
+              <%= label_tag "stock_status_name_#{locale}", Spree.t(:name) %>
+              
+              <%= text_field_tag "stock_status[name][#{locale}]",
+                Mobility.with_locale(locale) { f.object.name(fallback: false) }, class: 'form-control' %>
+              <%= error_message_on :stock_status, :name %>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
