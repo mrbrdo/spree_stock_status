@@ -5,10 +5,11 @@ sl-SI:
     new_stock_status: Nov status dobave
     stock_statuses: Statusi dobave
 
-    admin_product_arrival:
-      title: Naročeni izdelki
-      existing_status: Obstoječa dobava
-      new_status: ALI nov datum dobave
+    admin:
+      product_arrival:
+        title: Naročeni izdelki
+        existing_status: Obstoječa dobava
+        new_status: ALI nov datum dobave
 
     date_from: od
     date_to: do

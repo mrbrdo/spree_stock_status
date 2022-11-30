@@ -11,7 +11,7 @@
             <div class="form-group">
               <%= f.field_container :stock_status do %>
                 <%= select_tag 'product[stock_status_id]',
-                options_from_collection_for_select(Spree::StockStatus.non_stock_arrivals(include_id: @product.stock_status_id), :id, :name, @product.stock_status_id),
+                options_from_collection_for_select(Spree::StockStatus.without_arriving(include_id: @product.stock_status_id), :id, :name, @product.stock_status_id),
                   include_blank: Spree.t(:default), class: 'select2' %>
               <% end %>
             </div>
@@ -26,7 +26,7 @@
 
       <%= form_for [:admin, Spree::StockArrival.new], url: admin_stock_arrivals_path do |f| %>
         <fieldset>
-          <legend><%= Spree.t(:'admin_product_arrival.title') %></legend>
+          <legend><%= Spree.t(:'admin.product_arrival.title') %></legend>
           <div class="row">
             <div class="col-12 col-md-4">
               <div class="form-group">
@@ -40,16 +40,16 @@
 
             <div class="col-12 col-md-4">
               <div class="form-group">
-                <%= label_tag :'stock_arrival[stock_status_id]', Spree.t(:'admin_product_arrival.existing_status') %>
+                <%= label_tag :'stock_arrival[stock_status_id]', Spree.t(:'admin.product_arrival.existing_status') %>
                 <%= select_tag :'stock_arrival[stock_status_id]',
-                options_from_collection_for_select(Spree::StockStatus.stock_arrivals.order(id: :desc), :id, :name, @product.stock_status_id),
+                options_from_collection_for_select(Spree::StockStatus.with_arriving.order(id: :desc), :id, :name, @product.stock_status_id),
                   class: 'select2' %>
               </div>
             </div>
 
             <div class="col-12 col-md-4">
               <div class="form-group">
-                <%= label_tag :'stock_arrival[arriving_from]', Spree.t(:'admin_product_arrival.new_status') %>
+                <%= label_tag :'stock_arrival[arriving_from]', Spree.t(:'admin.product_arrival.new_status') %>
                 <div class="form-group">
                   <div class="row">
                     <div class="col-12 col-md-2">

@@ -5,10 +5,11 @@ en:
     new_stock_status: New Stock Status
     stock_statuses: Stock Statuses
 
-    admin_product_arrival:
-      title: Incoming Stock
-      existing_status: Existing Incoming Stock
-      new_status: OR New Date For Incoming Stock
+    admin:
+      product_arrival:
+        title: Incoming Stock
+        existing_status: Existing Incoming Stock
+        new_status: OR New Date For Incoming Stock
 
     date_from: from
     date_to: to

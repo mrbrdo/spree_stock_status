@@ -4,10 +4,11 @@ module Spree
     translates :name, backend: :table
 
     has_many :products, class_name: 'Spree::Product'
+    has_many :stock_arrivals, class_name: 'Spree::StockArrival', inverse_of: :arrival_stock_status, foreign_key: :arrival_stock_status_id
 
-    scope :stock_arrivals, -> { where.not(arriving_from: nil) }
+    scope :with_arriving, -> { where.not(arriving_from: nil) }
 
-    def self.non_stock_arrivals(include_id: nil)
+    def self.without_arriving(include_id: nil)
       if include_id
         where('spree_stock_statuses.arriving_from IS NULL OR spree_stock_statuses.id = ?', include_id)
       else
