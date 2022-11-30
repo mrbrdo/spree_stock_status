@@ -24,7 +24,7 @@ module Spree
       end
     end
 
-    def name
+    def name(*args, &block)
       if arriving_from
         super || display_arrival_dates
       else
