@@ -16,6 +16,7 @@ module Spree
         elsif stock_arrival_params[:stock_status_id].present?
           @stock_status = Spree::StockStatus.find(stock_arrival_params[:stock_status_id])
         end
+        raise ActionController::InvalidAuthenticityToken unless @stock_status
         previous_stock_status_id = variant.product.stock_status_id
         if previous_stock_status_id == @stock_status.id
           previous_stock_status_id =
